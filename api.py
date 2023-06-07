@@ -11,7 +11,7 @@ from wyoming.audio import AudioChunk, AudioStart, AudioStop
 app = Quart(__name__)
 
 SAMPLE_RATE = 16000
-SAMPLE_WIDTH = 4
+SAMPLE_WIDTH = 2
 SAMPLE_CHANNELS = 1
 
 
@@ -20,12 +20,10 @@ async def index():
     print("Incoming")
     byte_array = request.body
 
-    print(type(byte_array))
-
     resp, good = await async_process_audio_stream(byte_array)
 
     resp = resp.replace("%", " percent")
-    print(resp)
+    print("Response: " + resp)
 
     return jsonify({"text": resp})
 
