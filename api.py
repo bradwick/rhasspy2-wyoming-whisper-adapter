@@ -11,7 +11,7 @@ from wyoming.audio import AudioChunk, AudioStart, AudioStop
 app = Quart(__name__)
 
 SAMPLE_RATE = 16000
-SAMPLE_WIDTH = 2048
+SAMPLE_WIDTH = 1
 SAMPLE_CHANNELS = 1
 
 
